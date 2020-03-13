@@ -1,0 +1,21 @@
+td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+}
+
+body {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 16px;
+   max-width: 1200px;
+   margin: auto;
+   padding: 1em;
+   line-height: 24px;
+}
+
+.section {
+   font-size: 16px;
+   line-height: 24px;
+
+}
