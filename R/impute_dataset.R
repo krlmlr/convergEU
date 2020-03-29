@@ -130,14 +130,14 @@ impute_dataset <- function(myTB,
       sottoTB2 <- sottoTB1[startV:endV,]
       allTimes <- unlist(sottoTB2[,timeName]) ## all considered times
       #
-      sottoTB4 <- sottoTB2[!is.na(sottoTB2[,aux]),]# reduced to full data
+      sottoTB4 <- sottoTB2[!is.na(sottoTB2[[aux]]),]# reduced to full data
       lastRow <- nrow(sottoTB4)
       clusterMiss <- list()
       for(auxSM in 1:(lastRow-1)){
         timeCur <- unlist(sottoTB4[auxSM,timeName]); #tempo completo corrente
         timeCurP1 <- unlist(sottoTB4[auxSM + 1,timeName]); #tempo successivo completo
-        estrattoMis <- (sottoTB2[,timeName] > timeCur) &
-                       (sottoTB2[,timeName] < timeCurP1);
+        estrattoMis <- (sottoTB2[[timeName]] > timeCur) &
+                       (sottoTB2[[timeName]] < timeCurP1);
         if(sum(estrattoMis) > 0){
           valTimMis <- unlist(sottoTB2[estrattoMis,timeName])
           clusterMiss[[paste(timeCur)]] <- list(

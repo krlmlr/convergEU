@@ -80,8 +80,8 @@ departure_mean <- function(oriTB, sigmaTB, timeName = "time"){
   vettoVaria <- (sigmaTB$stdDev^2)
   for( aux in names(recodedTB)){
     # do calculations tag departures
-    infEstra <- recodedTB[,aux] < resTB$elle1
-    supEstra <- recodedTB[,aux] > resTB$elle2
+    infEstra <- recodedTB[[aux]] < resTB$elle1
+    supEstra <- recodedTB[[aux]] > resTB$elle2
     recodedTB[ ,aux] <- 0
     recodedTB[infEstra,aux] <- -1
     recodedTB[supEstra,aux] <- +1

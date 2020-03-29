@@ -67,7 +67,7 @@ gamma_conv_msteps <-  function(rawDat,
       return(tmp)
     }else{  };
     # sequence of times
-    estrattore <- unlist(rawDat[,timeName]>= startTime)  & unlist(rawDat[,timeName] <= endTime);
+    estrattore <- rawDat[[timeName]] >= startTime & rawDat[[timeName]] <= endTime
     timeSteps <- rawDat[estrattore, ]
     outRes <- timeSteps[,timeName]
     outRes$gammaConv <- NA

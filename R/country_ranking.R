@@ -94,7 +94,7 @@ country_ranking <- function(myTB,timeName="time", time_0=NA,time_t=NA, typeInd="
     ord_MS[ ,-posizTime] <-  -ord_MS[ ,-posizTime]
   }
   for(auxMS in 1:nrow(myDes1)) {
-        ord_MS[auxMS,-posizTime] <-  rank(unlist(ord_MS[auxMS,-posizTime]),ties.method ="min")
+        ord_MS[auxMS,-posizTime] <-  as.list(rank(unlist(ord_MS[auxMS,-posizTime]),ties.method ="min"))
       }
   ##obj_out <- convergEU_glb()$tmpl_out
   obj_out$err <- NULL
